@@ -25,15 +25,11 @@ public class EmpWage1 {
 		}
 
 		public static void empSalary(int empCheck) {
-			int empWrkHrs = 0;
-			if (empCheck == is_full_time) {
-				empWrkHrs = 8;
-			} else if (empCheck == is_part_time) {
-				empWrkHrs = 4;
-			}
-			
-			else {
-				empWrkHrs = 0;
+			int empWrkHrs;
+			switch (empCheck) {
+			case is_full_time -> empWrkHrs = 8;
+			case is_part_time -> empWrkHrs = 4;
+			default -> empWrkHrs = 0;
 			}
 			int empWage = empWrkHrs * Emp_Rate_Per_Hr;
 			System.out.println("empWage = " + empWage);
